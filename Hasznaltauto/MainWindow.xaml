@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hasznaltauto"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Használt autó kereskedés" Height="600" Width="800">
     <Grid Margin="0,0,0,0">
-        <TextBox x:Name="Marka" HorizontalAlignment="Left" Height="35" Margin="11,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="Tipus" HorizontalAlignment="Left" Height="35" Margin="100,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="Uzemanyag" HorizontalAlignment="Left" Height="35" Margin="189,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="Kivitel" HorizontalAlignment="Left" Height="35" Margin="278,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="Evjarat" HorizontalAlignment="Left" Height="35" Margin="456,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-        <TextBox x:Name="Ar" HorizontalAlignment="Left" Height="35" Margin="545,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
-        <ListBox x:Name="Hajtas" HorizontalAlignment="Left" Height="95" Margin="367,45,0,0" VerticalAlignment="Top" Width="84">
+        <ListBox x:Name="Uzemanyag" HorizontalAlignment="Left" Height="95" Margin="189,43,0,0" VerticalAlignment="Top" Width="84" SelectionChanged="Uzemanyag_SelectionChanged">
+            <ListBoxItem Content="Benzin"/>
+            <ListBoxItem Content="Dízel"/>
+            <ListBoxItem Content="Hibrid"/>
+            <ListBoxItem Content="Elektromos"/>
+        </ListBox>
+        <TextBox x:Name="Ar" HorizontalAlignment="Left" Height="35" Margin="545,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84"/>
+        <ListBox x:Name="Hajtas" HorizontalAlignment="Left" Height="95" Margin="367,42,0,0" VerticalAlignment="Top" Width="84">
             <ListBoxItem Content="Elsőkerék"/>
             <ListBoxItem Content="Hátsókerék"/>
             <ListBoxItem Content="Összkerék"/>
@@ -26,7 +27,11 @@
         <Label Content="Típus" HorizontalAlignment="Left" Height="33" Margin="100,10,0,0" VerticalAlignment="Top" Width="84"/>
         <Label Content="Márka" HorizontalAlignment="Left" Height="33" Margin="11,10,0,0" VerticalAlignment="Top" Width="84"/>
 
-        <Button Content="Ellenőriz és Megjelenít" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="35" Margin="11,100,0,0" Click="CheckAndDisplayImage"/>
+        <Button Content="Ellenőriz és Megjelenít" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="35" Margin="11,176,0,0" Click="CheckAndDisplayImage"/>
         <Image x:Name="CarImage" HorizontalAlignment="Left" Height="200" Margin="11,150,0,0" VerticalAlignment="Top" Width="300" Visibility="Collapsed"/>
+        <ListBox x:Name="Marka" HorizontalAlignment="Left" Height="95" Margin="11,44,0,0" VerticalAlignment="Top" Width="84" SelectionChanged="Marka_SelectionChanged"/>
+        <ListBox x:Name="Tipus" HorizontalAlignment="Left" Height="95" Margin="100,44,0,0" VerticalAlignment="Top" Width="84"/>
+        <ListBox x:Name="Kivitel" HorizontalAlignment="Left" Height="95" Margin="278,42,0,0" VerticalAlignment="Top" Width="84"/>
+        <ListBox x:Name="Evjarat" HorizontalAlignment="Left" Height="95" Margin="456,42,0,0" VerticalAlignment="Top" Width="84"/>
     </Grid>
 </Window>
